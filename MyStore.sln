@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Api", "Basket.Api\ShoppingBasket.Api.csproj", "{E3FB3136-3645-421D-A971-E13933A6410E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Core", "Basket.Entities\ShoppingBasket.Core.csproj", "{96375842-CDDB-4A98-B104-4119E59D4B1E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Infrastructure", "Basket.InfraStructure\ShoppingBasket.Infrastructure.csproj", "{7CA2B3A0-E78A-4657-ADBD-60244F57FF60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{938EA1D8-CB39-45D5-8324-7F1CF80B00D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{A89FD596-7A2D-4A42-982E-1010D9652677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.ApiClient.NetCore2", "ShoppingBasket.ApiClient.NetCore2\ShoppingBasket.ApiClient.NetCore2.csproj", "{183C25A8-90EF-4334-A040-B7943D0A89F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3FB3136-3645-421D-A971-E13933A6410E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FB3136-3645-421D-A971-E13933A6410E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FB3136-3645-421D-A971-E13933A6410E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FB3136-3645-421D-A971-E13933A6410E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96375842-CDDB-4A98-B104-4119E59D4B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96375842-CDDB-4A98-B104-4119E59D4B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96375842-CDDB-4A98-B104-4119E59D4B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96375842-CDDB-4A98-B104-4119E59D4B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA2B3A0-E78A-4657-ADBD-60244F57FF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA2B3A0-E78A-4657-ADBD-60244F57FF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA2B3A0-E78A-4657-ADBD-60244F57FF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA2B3A0-E78A-4657-ADBD-60244F57FF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89FD596-7A2D-4A42-982E-1010D9652677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89FD596-7A2D-4A42-982E-1010D9652677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89FD596-7A2D-4A42-982E-1010D9652677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89FD596-7A2D-4A42-982E-1010D9652677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183C25A8-90EF-4334-A040-B7943D0A89F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183C25A8-90EF-4334-A040-B7943D0A89F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183C25A8-90EF-4334-A040-B7943D0A89F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183C25A8-90EF-4334-A040-B7943D0A89F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A89FD596-7A2D-4A42-982E-1010D9652677} = {938EA1D8-CB39-45D5-8324-7F1CF80B00D3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73DDD487-8AB5-4345-A70B-C335ED8EE703}
+	EndGlobalSection
+EndGlobal
