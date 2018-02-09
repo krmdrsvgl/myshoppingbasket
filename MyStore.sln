@@ -11,7 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Infrastructu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{938EA1D8-CB39-45D5-8324-7F1CF80B00D3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{A89FD596-7A2D-4A42-982E-1010D9652677}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.ApiClient.NetCore2", "ShoppingBasket.ApiClient.NetCore2\ShoppingBasket.ApiClient.NetCore2.csproj", "{183C25A8-90EF-4334-A040-B7943D0A89F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CBFB4B39-050B-4EE5-8973-554EEF0A831E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\my_shopping_api_dokument.pdf = ..\..\..\Desktop\my_shopping_api_dokument.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

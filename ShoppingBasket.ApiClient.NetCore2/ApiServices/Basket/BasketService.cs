@@ -20,20 +20,7 @@ namespace ShoppingBasket.ApiClient.NetCore2.ApiServices.Basket
             return HttpClientHelper.Execute<BasketInfo>(request);
             
         }
-
-        public void ClearBasket()
-        {
-            var request = new RestRequest
-            {
-                Resource = "/clearAll",
-                Method = Method.DELETE
-            };
-
-            HttpClientHelper.Execute<BasketInfo>(request);
-        }
-
-      
-
+       
         public BasketInfo DeleteItem(string itemId)
         {
             var request = new RestRequest
@@ -68,6 +55,17 @@ namespace ShoppingBasket.ApiClient.NetCore2.ApiServices.Basket
             request.AddParameter("quantity", quantity, ParameterType.RequestBody);
 
             return HttpClientHelper.Execute<BasketInfo>(request);
+        }
+
+        public void ClearBasket()
+        {
+            var request = new RestRequest
+            {
+                Resource = "/clearAll",
+                Method = Method.DELETE
+            };
+
+            HttpClientHelper.Execute<BasketInfo>(request);
         }
 
     }

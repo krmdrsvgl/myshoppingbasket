@@ -25,7 +25,7 @@ namespace ShoppingBasket.ApiClient.NetCore2.Helper
             };
 
             request.AddParameter("SecretId", AppSettings.SecretId, ParameterType.HttpHeader); // used on every request
-            request.AddHeader("Authorization", string.Format("Bearer {0}", GetUsersToken()));// used in every token
+            request.AddHeader("Authorization", string.Format("Bearer {0}", GetUsersToken()));// used on every request
 
             var response = client.Execute<T>(request);
 
