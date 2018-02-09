@@ -9,7 +9,7 @@ namespace ShoppingBasket.ApiClient.NetCore2
             throw new NotImplementedException();
         }
 
-        public static string UserName { get; set; }
-        public static string Password { get; set; }
+        public static string SecretId { get; set; }
+       
     }
 }

@@ -9,14 +9,33 @@ namespace ShoppingBasket.ApiClient.NetCore2.Helper
     public class HttpClientHelper
     {
 
-        public  static  RestClient GetRestClient()
+        const string _baseUrl = "http://localhost:5001/api";
+
+     
+        public static  string GetUsersToken()
         {
-            var client = new RestClient(ApiHelper.BaseUrl)
+            return "token";
+        }
+
+        public static T Execute<T>( RestRequest request) where T : new()
+        {
+            var client = new RestClient
             {
-                Authenticator = new HttpBasicAuthenticator(AppSettings.UserName, AppSettings.Password)
+                BaseUrl = new System.Uri(_baseUrl),              
             };
 
-            return client;
+            request.AddParameter("SecretId", AppSettings.SecretId, ParameterType.HttpHeader); // used on every request
+            request.AddHeader("Authorization", string.Format("Bearer {0}", GetUsersToken()));// used in every token
+
+            var response = client.Execute<T>(request);
+
+            if (response.ErrorException != null)
+            {
+                const string message = "Error retrieving response.  Check inner details for more info.";
+                var apiException = new ApplicationException(message, response.ErrorException);
+                throw apiException;
+            }
+            return response.Data;
         }
     }
 }

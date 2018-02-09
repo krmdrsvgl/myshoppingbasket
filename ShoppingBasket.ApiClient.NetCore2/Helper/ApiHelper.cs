@@ -10,8 +10,7 @@ namespace ShoppingBasket.ApiClient.NetCore2.Helper
         public static string BaseUrl => "http://localhost/5000";
 
         #region Basket Api Url
-       
-        
+              
         #endregion
 
     }

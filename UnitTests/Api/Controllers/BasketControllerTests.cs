@@ -28,7 +28,7 @@ namespace UnitTests.Api.Controllers
             
             var controller = new BasketController(mockService.Object, mockLogger.Object);
 
-            var result = await controller.Get();
+            var result = await controller.GetOrCreateBasket();
             var viewResult = Assert.IsType<OkObjectResult>(result);
             var model = Assert.IsAssignableFrom<BasketViewModel>(
                 viewResult.Value);

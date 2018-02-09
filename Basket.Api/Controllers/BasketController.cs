@@ -28,7 +28,7 @@ namespace ShoppingBasket.Api.Controllers
         /// <returns></returns>
         // GET: api/basket
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetOrCreateBasket()
         {
             var usersBasket= await _basketService.GetOrCreateBasketforUserAsync(GetCurrentUserId());
             return Ok(ViewHelper.MapToBasketViewModel( usersBasket));
@@ -41,8 +41,9 @@ namespace ShoppingBasket.Api.Controllers
         /// </summary>
         /// <param name="item">Itemid and quantity fields are required. </param>
         /// <returns></returns>
+        // POST: api/basket
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] AddOrUpdateItemViewModel item )
+        public async Task<IActionResult> AddItemToBasket([FromBody] AddOrUpdateItemViewModel item )
         {          
             if (ModelState.IsValid)
             {
@@ -64,8 +65,10 @@ namespace ShoppingBasket.Api.Controllers
         /// <param name="id"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
+        /// 
+        // PUT: api/basket/changeQuantity/{id}"
         [HttpPut("changeQuantity/{id}")]
-        public async Task<IActionResult> Put(string id, [FromBody] int quantity)
+        public async Task<IActionResult> UpdateQuantityOfTheItem(string id, [FromBody] int quantity)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +90,8 @@ namespace ShoppingBasket.Api.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        /// DELETE: api/basket/deleteItem/{id}"
+        /// 
         [HttpDelete("deleteItem/{id}")]
         public async Task<IActionResult> Delete(string id)
         {
@@ -105,7 +110,7 @@ namespace ShoppingBasket.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpDelete("clearAll")]
-        public async Task<IActionResult> Delete()
+        public async Task<IActionResult> ClearAll()
         {
             var result = await _basketService.ClearOutTheBasketAsync(GetCurrentUserId());
 
