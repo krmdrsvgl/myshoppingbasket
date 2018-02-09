@@ -40,7 +40,7 @@ namespace UnitTests.Infra
 
             await basketService.GetOrCreateBasketforUserAsync(_testUserId1);
             var basketinRepo =
-                (await inMemoryBasketRepo.FindBasket(new BasketFilterObject {UserId = _testUserId1})).First();
+                (await inMemoryBasketRepo.Find(new BasketFilterObject {UserId = _testUserId1})).First();
 
             basketinRepo.UserId.ShouldBe(_testUserId1);
         }
@@ -58,7 +58,7 @@ namespace UnitTests.Infra
             await basketService.GetOrCreateBasketforUserAsync("user3");
 
             var basketCount =
-                (await inMemoryBasketRepo.FindBasket(new BasketFilterObject { })).Count;
+                (await inMemoryBasketRepo.Find(new BasketFilterObject { })).Count;
 
             basketCount.ShouldBe(3);
         }

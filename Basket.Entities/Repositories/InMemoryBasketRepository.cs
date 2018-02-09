@@ -24,16 +24,16 @@ namespace ShoppingBasket.Core.Repositories
             return await Task.FromResult(basket);
         }
 
-        public async Task<Basket> AddBasket(Basket newBasket)
+        public async Task<Basket> Add(Basket newBasket)
         {          
             _baskets.Add(newBasket);
 
             return await Task.FromResult(newBasket);
         }
 
-        public async Task<bool> DeleteBasket(int basketId, string userId)
+        public async Task<bool> Delete(int basketId, string userId)
         {
-            var basket = await GetBasket(basketId);
+            var basket = await Get(basketId);
 
             if (basket == null)
             {
@@ -46,12 +46,12 @@ namespace ShoppingBasket.Core.Repositories
             return await Task.FromResult(true);
         }
 
-        public async Task<Basket> GetBasket(int basketId)
+        public async Task<Basket> Get(int basketId)
         {
             return await Task.FromResult(_baskets.SingleOrDefault(x => x.Id == basketId));
         }
       
-        public async Task<List<Basket>> FindBasket(BasketFilterObject searchInfo)
+        public async Task<List<Basket>> Find(BasketFilterObject searchInfo)
         {
             var basketQuery = _baskets.AsQueryable();           
 

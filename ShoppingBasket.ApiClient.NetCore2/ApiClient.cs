@@ -14,7 +14,7 @@ namespace ShoppingBasket.ApiClient.NetCore2
 
         public ApiClient(string userId, string password)
         {
-            AppSettings.UserId = userId;
+            AppSettings.UserName = userId;
             AppSettings.Password = password;
         }
 

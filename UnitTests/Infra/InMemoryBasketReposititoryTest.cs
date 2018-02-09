@@ -33,15 +33,15 @@ namespace UnitTests.Infra
             };           
 
             //Add a new basket to in memory list and fetch and check
-            await basketRepository.AddBasket(newBasket);
+            await basketRepository.Add(newBasket);
 
-            var basketInfo = (await basketRepository.FindBasket(new BasketFilterObject())).First();
+            var basketInfo = (await basketRepository.Find(new BasketFilterObject())).First();
 
             basketInfo.UserId.ShouldBe(_testUserId);
             basketInfo.Id.ShouldBe(_testBasketId);
             
             //get by id an check values
-            var basketGetById = (await basketRepository.GetBasket(_testBasketId));
+            var basketGetById = (await basketRepository.Get(_testBasketId));
             basketGetById.UserId.ShouldBe(_testUserId);
             basketGetById.Id.ShouldBe(_testBasketId);
 
@@ -52,13 +52,13 @@ namespace UnitTests.Infra
             };
 
             //add a new Basket- There should be two baskets now.
-            await basketRepository.AddBasket(newBasket2);
+            await basketRepository.Add(newBasket2);
 
-            var basketFounSearchInfo = (await basketRepository.FindBasket(new BasketFilterObject{BasketId = _testBasketId1})).First();
+            var basketFounSearchInfo = (await basketRepository.Find(new BasketFilterObject{BasketId = _testBasketId1})).First();
             basketFounSearchInfo.UserId.ShouldBe(_testUserId1);
             basketFounSearchInfo.Id.ShouldBe(_testBasketId1);
 
-            var basketCount = (await basketRepository.FindBasket(new BasketFilterObject())).Count();
+            var basketCount = (await basketRepository.Find(new BasketFilterObject())).Count();
             basketCount.ShouldBe(2);
 
         }
@@ -75,8 +75,8 @@ namespace UnitTests.Infra
                 Id = _testBasketId
             };
 
-            await basketRepository.AddBasket(newBasket);
-            await  Assert.ThrowsAsync<ArgumentNullException>(()=> basketRepository.DeleteBasket(0,""));           
+            await basketRepository.Add(newBasket);
+            await  Assert.ThrowsAsync<ArgumentNullException>(()=> basketRepository.Delete(0,""));           
         }
 
         [Fact]
@@ -90,8 +90,8 @@ namespace UnitTests.Infra
                 Id = _testBasketId
             };
 
-            await basketRepository.AddBasket(newBasket);
-            var deleteResult = await basketRepository.DeleteBasket(_testBasketId, _testUserId);
+            await basketRepository.Add(newBasket);
+            var deleteResult = await basketRepository.Delete(_testBasketId, _testUserId);
             deleteResult.ShouldBe(true);
         }
     }

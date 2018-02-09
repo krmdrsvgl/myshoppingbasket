@@ -7,11 +7,11 @@ namespace ShoppingBasket.Core.Interfaces
 {
     public interface IBasketRepository
     {       
-        Task<bool> DeleteBasket(int basketId, string userId);
-        Task<Basket> GetBasket(int basketId);
+        Task<bool> Delete(int basketId, string userId);
+        Task<Basket> Get(int basketId);
         Task<Basket> Update(Basket basket);
-        Task<Basket> AddBasket(Basket basket);      
-        Task<List<Basket>> FindBasket(BasketFilterObject searchInfo);
+        Task<Basket> Add(Basket basket);      
+        Task<List<Basket>> Find(BasketFilterObject searchInfo);
         Task SaveChanges();
     }
 }

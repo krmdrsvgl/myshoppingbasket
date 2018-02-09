@@ -83,7 +83,7 @@ namespace ShoppingBasket.Core.DomainServices
         {
             //find the first basket that belongs to user
 
-            var basket = ( await _basketRepository.FindBasket(new BasketFilterObject() {UserId = userId}))?.FirstOrDefault();
+            var basket = ( await _basketRepository.Find(new BasketFilterObject() {UserId = userId}))?.FirstOrDefault();
 
             //if there is no basket present create one.
             if (basket == null)
@@ -94,7 +94,7 @@ namespace ShoppingBasket.Core.DomainServices
                     CreatedAt = DateTime.UtcNow
                 };
 
-                basket= await _basketRepository.AddBasket(basket);
+                basket= await _basketRepository.Add(basket);
 
                 return basket;
             }
