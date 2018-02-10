@@ -37,7 +37,9 @@ DELETE http://localhost:5001/api/basket/delete remove the item from basket.
 DELETE http://localhost:5001/api/basket/clearall remove all  the items from basket. 
 
 
-### http://localhost:5001/api/catalogitems  Since it is Catalog Items is another context, Catalog Item api is only for test purposes. When catalog service is served by the other teams, it can easily be replaced. 
+### http://localhost:5001/api/catalogitems  
+
+Since it is Catalog Items is another context, Catalog Item api is only for test purposes. When catalog service is served by the other teams, it can easily be replaced. 
 
 ## CLIENT LIBRARY
 Library is a plain class library. It requires the SecretKey of consumer. 
