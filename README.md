@@ -22,7 +22,7 @@ Application assumes that there is legit JWT token present. In future, some OAUTH
 
 There are two api end points:
 
-http://localhost:5001/api/basket : 
+### http://localhost:5001/api/basket : 
 
 This is the main REST API endpoint that implements adding, removing items, changing quantity, clearing out  basket items. Each user has only one basket. 
 
@@ -37,10 +37,10 @@ DELETE http://localhost:5001/api/basket/delete remove the item from basket.
 DELETE http://localhost:5001/api/basket/clearall remove all  the items from basket. 
 
 
-http://localhost:5001/api/catalogitems  Since it is Catalog Items is another context, Catalog Item api is only for test purposes. When catalog service is served by the other teams, it can easily be replaced. 
+### http://localhost:5001/api/catalogitems  Since it is Catalog Items is another context, Catalog Item api is only for test purposes. When catalog service is served by the other teams, it can easily be replaced. 
 
 ## CLIENT LIBRARY
-Library is plain library. It requires the SecretKey of consumer. 
+Library is a plain class library. It requires the SecretKey of consumer. 
 Library assumes it has already acquired a JWT token of the user. To do so, an Identity Server or a third party identity could be used. Library implements all Basket APIs. In every request, secret and user`s JWT token are sent to API endpoint. 
 
 
